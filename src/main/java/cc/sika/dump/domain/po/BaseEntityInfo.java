@@ -1,4 +1,4 @@
-package cc.sika.dump.domain;
+package cc.sika.dump.domain.po;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import lombok.AllArgsConstructor;
@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
 @SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
-public abstract class BaseEntityInfo implements BaseEntity {
+public abstract class BaseEntityInfo implements cc.sika.dump.domain.po.BaseEntity {
 
     /**
      * 创建时间 CREATE_TIME

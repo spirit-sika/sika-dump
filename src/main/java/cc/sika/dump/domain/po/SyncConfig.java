@@ -1,4 +1,4 @@
-package cc.sika.dump.domain;
+package cc.sika.dump.domain.po;
 
 import cc.sika.dump.consts.SyncConfigTypeEnum;
 import com.baomidou.mybatisplus.annotation.TableField;
@@ -46,6 +46,14 @@ public class SyncConfig extends BaseEntityInfo {
     private Integer syncType;
 
     /**
+     * 发送端与接收端的配置组名称 CONFIG_GROUP_NAME
+     * <p>
+     * 只有同个组的发送端配置和接收端配置组名一致才进行数据处理
+     */
+    @TableField("CONFIG_GROUP_NAME")
+    private String configGroupName;
+
+    /**
      * 引用名 REF_NAME
      */
     @TableField("REF_NAME")
@@ -58,7 +66,7 @@ public class SyncConfig extends BaseEntityInfo {
     private String tableName;
 
     /**
-     * l COLUMN_NAME
+     * 列名称 COLUMN_NAME
      */
     @TableField("COLUMN_NAME")
     private String columnName;

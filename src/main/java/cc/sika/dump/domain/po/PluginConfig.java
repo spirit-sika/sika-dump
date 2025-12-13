@@ -1,4 +1,4 @@
-package cc.sika.dump.domain;
+package cc.sika.dump.domain.po;
 
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;

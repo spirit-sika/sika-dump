@@ -1,4 +1,4 @@
-package cc.sika.dump.domain;
+package cc.sika.dump.domain.po;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
