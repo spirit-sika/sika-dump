@@ -1,6 +1,7 @@
 package cc.sika.dump.domain.po;
 
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,12 +18,13 @@ import java.time.LocalDateTime;
 @SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
-public abstract class BaseEntityInfo implements cc.sika.dump.domain.po.BaseEntity {
+public abstract class BaseEntityInfo implements BaseEntity {
 
     /**
      * 创建时间 CREATE_TIME
      */
     @TableField("CREATE_TIME")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private LocalDateTime createTime;
 
     /**
@@ -41,6 +43,7 @@ public abstract class BaseEntityInfo implements cc.sika.dump.domain.po.BaseEntit
      * 修改时间 UPDATE_TIME
      */
     @TableField("UPDATE_TIME")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private LocalDateTime updateTime;
 
     /**

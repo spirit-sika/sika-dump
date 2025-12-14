@@ -1,6 +1,6 @@
 package cc.sika.dump.mapper;
 
-import cc.sika.dump.domain.PluginConfig;
+import cc.sika.dump.domain.po.PluginConfig;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

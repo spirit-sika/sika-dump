@@ -1,6 +1,6 @@
 package cc.sika.dump.service;
 
-import cc.sika.dump.domain.DbConnectInfo;
+import cc.sika.dump.domain.po.DbConnectInfo;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**

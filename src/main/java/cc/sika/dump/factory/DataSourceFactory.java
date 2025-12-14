@@ -1,7 +1,7 @@
 package cc.sika.dump.factory;
 
 
-import cc.sika.dump.consts.DbType;
+import cc.sika.dump.consts.DbTypeEnum;
 import cn.hutool.core.text.CharSequenceUtil;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
@@ -14,10 +14,11 @@ import java.util.Locale;
  * @author 小吴来哩
  * @since 2025-12
  */
+@SuppressWarnings("unused")
 public class DataSourceFactory {
 
     private static final String MYSQL_URL_PATTERN = "jdbc:mysql://{}:{}/{}";
-    private static final String POSTGRESQL_URL_PATTERN = "jdbc:postgresql://%s:%d/%s";
+    private static final String POSTGRESQL_URL_PATTERN = "jdbc:postgresql://{}:{}/{}";
     private static final String ORACLE_URL_PATTERN = "jdbc:oracle:thin:@{}:{}:{}";
     private static final String SQLSERVER_URL_PATTERN = "jdbc:sqlserver://{}:{};databaseName={}";
     private static final String DAMENG_URL_PATTERN = "jdbc:dm://{}:{}/{}";
@@ -30,25 +31,25 @@ public class DataSourceFactory {
 
         String upperCase = dbType.toUpperCase(Locale.ENGLISH);
 
-        switch (DbType.valueOf(upperCase)) {
+        switch (DbTypeEnum.valueOf(upperCase)) {
             case MYSQL -> {
-                dataSource.setDriverClassName(DbType.MYSQL.driverClass());
+                dataSource.setDriverClassName(DbTypeEnum.MYSQL.driverClass());
                 return dataSource;
             }
             case ORACLE -> {
-                dataSource.setDriverClassName(DbType.ORACLE.driverClass());
+                dataSource.setDriverClassName(DbTypeEnum.ORACLE.driverClass());
                 return dataSource;
             }
             case POSTGRESQL -> {
-                dataSource.setDriverClassName(DbType.POSTGRESQL.driverClass());
+                dataSource.setDriverClassName(DbTypeEnum.POSTGRESQL.driverClass());
                 return dataSource;
             }
             case DAMENG -> {
-                dataSource.setDriverClassName(DbType.DAMENG.driverClass());
+                dataSource.setDriverClassName(DbTypeEnum.DAMENG.driverClass());
                 return dataSource;
             }
             case SQLSERVER -> {
-                dataSource.setDriverClassName(DbType.SQLSERVER.driverClass());
+                dataSource.setDriverClassName(DbTypeEnum.SQLSERVER.driverClass());
                 return dataSource;
             }
             default -> throw new IllegalArgumentException("Unsupported database type: " + dbType);
@@ -57,7 +58,7 @@ public class DataSourceFactory {
 
     public static String getURL(String dbType, String host, Integer port, String dbName) {
         String upperCase = dbType.toUpperCase(Locale.ENGLISH);
-        return switch (DbType.valueOf(upperCase)) {
+        return switch (DbTypeEnum.valueOf(upperCase)) {
             case MYSQL -> CharSequenceUtil.format(MYSQL_URL_PATTERN, host, port, dbName);
             case POSTGRESQL -> CharSequenceUtil.format(POSTGRESQL_URL_PATTERN, host, port, dbName);
             case ORACLE ->

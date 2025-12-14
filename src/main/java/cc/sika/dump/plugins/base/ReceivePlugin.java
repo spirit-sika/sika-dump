@@ -1,7 +1,7 @@
 package cc.sika.dump.plugins.base;
 
 import cc.sika.dump.consts.PluginType;
-import cc.sika.dump.domain.SyncConfig;
+import cc.sika.dump.domain.po.SyncConfig;
 
 import java.util.Collection;
 import java.util.List;
@@ -12,6 +12,7 @@ import java.util.List;
  * @author 小吴来哩
  * @since 2025-12
  */
+@SuppressWarnings("unused")
 public interface ReceivePlugin<T> extends DumpPlugin {
 
     @Override

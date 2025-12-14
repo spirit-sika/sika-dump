@@ -54,3 +54,10 @@ dependencies {
 tasks.named('test') {
     useJUnitPlatform()
 }
+
+test {
+    jvmArgs = [
+            "-javaagent:${classpath.find { it.name.contains("byte-buddy-agent") }.absolutePath}",
+            "-XX:+EnableDynamicAgentLoading"
+    ]
+}

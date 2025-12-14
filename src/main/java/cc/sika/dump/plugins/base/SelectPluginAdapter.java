@@ -1,6 +1,7 @@
 package cc.sika.dump.plugins.base;
 
-import cc.sika.dump.domain.SyncConfig;
+
+import cc.sika.dump.domain.po.SyncConfig;
 
 import java.util.Collection;
 import java.util.List;
@@ -11,6 +12,7 @@ import java.util.List;
  * @author 小吴来哩
  * @since 2025-12
  */
+@SuppressWarnings("unused")
 public abstract class SelectPluginAdapter<T> implements SendPlugin<T> {
 
     @Override

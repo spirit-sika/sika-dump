@@ -1,6 +1,6 @@
 package cc.sika.dump.service;
 
-import cc.sika.dump.domain.SyncConfig;
+import cc.sika.dump.domain.po.SyncConfig;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**

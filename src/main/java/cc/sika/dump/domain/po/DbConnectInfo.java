@@ -1,5 +1,6 @@
 package cc.sika.dump.domain.po;
 
+import cc.sika.dump.consts.DbTypeEnum;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
@@ -93,7 +94,7 @@ public class DbConnectInfo extends BaseEntityInfo {
      /**
      * 数据库服务器类型 SERVER_TYPE
      *
-     * @see cc.sika.dump.consts.DbType 可用数据库类型枚举
+     * @see DbTypeEnum 可用数据库类型枚举
      */
      @TableField("SERVER_TYPE")
     private String serverType;

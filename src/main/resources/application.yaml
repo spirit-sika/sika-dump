@@ -9,3 +9,8 @@ spring:
 #    exclude: org.springframework.boot.jdbc.autoconfigure.DataSourceAutoConfiguration
   application:
     name: sika-dump
+
+decorator:
+  datasource:
+    p6spy:
+      logging: slf4j

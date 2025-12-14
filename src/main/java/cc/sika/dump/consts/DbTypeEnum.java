@@ -7,28 +7,29 @@ import lombok.Getter;
  * @since 2025-12
  */
 @Getter
-public enum DbType {
+@SuppressWarnings("unused")
+public enum DbTypeEnum {
     MYSQL("MYSQL", "com.mysql.cj.jdbc.Driver"),
     POSTGRESQL("POSTGRESQL", "org.postgresql.Driver"),
     ORACLE("ORACLE", "oracle.jdbc.OracleDriver"),
     SQLSERVER("SQLSERVER", "com.microsoft.sqlserver.jdbc.SQLServerDriver"),
     DAMENG("DAMENG", "dm.jdbc.driver.DmDriver");
 
-    private final String dbName;
+    private final String name;
     private final String driverClassName;
 
-    DbType(String dbName, String driverClassName) {
-        this.dbName = dbName;
+    DbTypeEnum(String name, String driverClassName) {
+        this.name = name;
         this.driverClassName = driverClassName;
     }
 
     @Override
     public String toString() {
-        return this.dbName;
+        return this.name;
     }
 
     public String dbName() {
-        return this.dbName;
+        return this.name;
     }
 
     public String driverClass() {
