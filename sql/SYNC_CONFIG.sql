@@ -48,14 +48,14 @@ comment on column SYNC_CONFIG.COLUMN_SCALE is '数据库列精度, 小数位数'
 
 comment on column SYNC_CONFIG.AUTO_GENERATE is '是否自动生成, 1-是 2-否';
 
-comment on column CONNECT_INFO.CREATE_TIME is '创建时间';
+comment on column SYNC_CONFIG.CREATE_TIME is '创建时间';
 
-comment on column CONNECT_INFO.CREATE_BY is '创建人';
+comment on column SYNC_CONFIG.CREATE_BY is '创建人';
 
-comment on column CONNECT_INFO.CREATE_BY_ID is '创建人 Id';
+comment on column SYNC_CONFIG.CREATE_BY_ID is '创建人 Id';
 
-comment on column CONNECT_INFO.UPDATE_TIME is '修改时间';
+comment on column SYNC_CONFIG.UPDATE_TIME is '修改时间';
 
-comment on column CONNECT_INFO.UPDATE_BY is '修改人';
+comment on column SYNC_CONFIG.UPDATE_BY is '修改人';
 
-comment on column CONNECT_INFO.UPDATE_BY_ID is '修改人 Id';
+comment on column SYNC_CONFIG.UPDATE_BY_ID is '修改人 Id';
